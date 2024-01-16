@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rStyle.css">
+	<link rel="stylesheet" type="text/css" href="loaderStyle.css">
+	<title>Registration for future updates !</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin:"anonymous" ></script>
+	<script type="text/javascript" src="loaderFunction.js"></script>
+	<script type="text/javascript" src="validateRegister.js"></script>
+	<script type="text/javascript" src="popupFunc.js"></script>
+	
+</head>
+<body>
+	<div class="loader-container">
+        <div class="loader"></div>
+    </div>
+	<div class="container">
+		<div class="title">Registration</div>
+		<form action="https://formspree.io/f/mvolweoo" method="POST">
+			<div class="user-details" data-errormsg="">
+			
+				<div class="input-box" data-errormsg="">
+					<span class="details">Full Name</span>
+					<input type="text" placeholder="Enter your name" id ="contact-name" onkeyup="validateName()" name="fullName" required>
+					<span id="name-error">name is required</span>
+				</div>
+				<div class="input-box" data-errormsg="">
+					<span class="details">Username</span>
+					<input type="text" placeholder="Enter your username" name="username" required>
+					<span id="username-error">username is required</span>
+				</div >
+				<div class="input-box" data-errormsg="">
+					<span class="details">Email</span>
+					<input type="email" placeholder="Enter your e-mail" id="contatc-email" onkeyup="validateEmail()" name="email" required>
+					<span id="email-error">e-mail is required</span>
+				</div >
+				<div class="input-box" data-errormsg="">
+					<span class="details">Phone number</span>
+					<input type="tel" placeholder="053 279 5067"  id="contact-phone" onkeyup="validatePhone()"name="phone" required>
+					<span id="phone-error">phone number is required</span>
+				</div>
+				<div class="input-box" data-errormsg="">
+					<span class="details">password</span>
+					<input type="password" placeholder="Enter your password" name="passowrd" required>
+					<span id="password-error">password is required</span>
+				</div>
+				<div class="input-box" data-errormsg="">
+					<span class="details">confirm password</span>
+					<input type="password" placeholder="confirm password" name="confirm"required>
+					<div class="error"></div>
+				</div>
+				
+				<div class="gender-details" data-errormsg="">
+					<input type="radio" name="gender" id="dot-1">
+					<input type="radio" name="gender" id="dot-2">
+					<input type="radio" name="gender" id="dot-3">
+					<span class="gender-title">Gender</span>
+					<div class="category">
+						<label for="dot-1">
+							<span class="dot one"></span>
+							<span class="gender">Male</span>
+						</label>
+						<label for="dot-2">
+							<span class="dot two"></span>
+							<span class="gender">Female</span>
+						</label>
+						<label for="dot-3">
+							<span class="dot three"></span>
+							<span class="gender">Prefer not to say</span>
+						</label>
+					</div>
+				</div>
+				<div class="container2">
+					
+					<button type="submit" class="button" onclick="openPopup()"><a href="#">Submit</a></button>
+					<span id="submit-errro">Please fix error</span>
+					
+					
+					<!--START POPUP SECTION-->
+					<div class="popup" id="popup">
+						<img src="tick.png" alt="">
+						<h2>Thank you!</h2>
+						<p>Your details has been successfully submitted.Thanks!</p>
+						<button type="button" onclick="closePopup()" onclick="return validateForm()">OK</button>
+					</div>
+					<!--END POPUP SECTION-->
+					
+					
+					<script type="text/javascript" src="popupFunc.js"></script>
+			
+				</div>
+			</div>
+		</form>
+	</div>
+    
+</body>
+</html>

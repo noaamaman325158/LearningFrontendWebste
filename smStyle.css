@@ -1,0 +1,53 @@
+body{
+	  margin: 0;
+	  padding: 0;
+	  /*100vh == 100% of the viewport height*/
+	  min-height: 100vh;
+	  display: flex;
+	  align-items: flex-end;
+	  /*justify-content property defines how the broswer distributes space between and around content item along the main-axis of a flex-container*/
+	  justify-content: center;
+	  background-color: gb(235,235,235);
+	  box-sizing:border-box;
+}
+
+.sm a{
+	/*The element itself is formatted as an inline element ,but it can apply height and width values*/
+	display: inline-block;
+	font-size: 40px;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color:  rgb(82, 120, 255);
+	margin: 0 16px;
+	transition: .4s linear;
+	position: relative;
+}
+
+.sm a::before, .sm a::after{
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	transition: .4s linear;
+}
+
+.sm a:hover{
+	/*define transformation in the 2D plane*/
+	transform: scale(.8);
+}
+.sm a:hover::before{
+	border-left: 4px solid;
+	border-right: 4px solid;
+	transform: skewX(20deg);
+}
+
+.sm a:hover::after{
+	border-top: 4px solid;
+	border-bottom: 4px solid;
+	transform: skewY(-20deg);
+}

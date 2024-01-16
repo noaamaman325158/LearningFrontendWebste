@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="getInTouch.css">
+	<link rel="stylesheet" type="text/css" href="./loaderStyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script type="text/javascript" src="loaderFunction.js"></script>
+  <script type="text/javascript" src="validateRegister.js"></script>
+  <style>
+	.item .fa{
+	  margin-bottom: 24px;
+	  margin-right: 16px;
+	  font-size: 16px;
+	  color: #322;
+	  background-color: #3494db;
+	  width: 60px;
+	  height: 60px;
+	  border-radius: 50%;
+	  text-align: center;
+	  display: flex; 
+	  justify-content: space-around;
+	  box-sizing: border-box; 
+	  align-items: center;
+	  
+	}
+  </style>
+	
+</head>
+
+
+
+<body>
+	<div class="loader-container">
+			<div class="loader"></div>
+	</div>
+  <div class="contact-page">
+    <h2>Get in touch</h2>
+    <div class="contact-info">
+		
+      <div class="item">
+        <i class="fa fa-home"></i>
+		Israel, Rosh Pina
+      </div>
+      <div class="item">
+        <i class="fa fa-phone"></i>
+        053-2795067
+      </div>
+      <div class="item">
+        <i class="fa fa-envelope"></i>
+        noaamaman325158@gmail.com
+      </div>
+      <div class="item">
+        <i class="fa fa-clock"></i>
+        24/7 😋
+		
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xoqrkgaz" action="insert.php" class="contact-form" onclick="return validateForm()" method="POST">
+      <input type="text" class="textb" placeholder="Your Name" name="name" onclick="validateName()" required>
+      <input type="email" class="textb" placeholder="Your Email" name="email"onclick="validateEmail()" required>
+      <textarea placeholder="Your Message" name="text" required></textarea>
+      <input type="submit" class="btn" value='Send' name="sendSubmit">
+    </form>
+  </div>
+  <script>
+	var nameError = document.getElementById('name-error');
+						var phoneError = document.getElementById('phone-error');
+						var emailError = document.getElementById('email-error');
+						var submitError = document.getElementById('submit-errro');
+						
+						function validateName(){
+							var name = document.getElementById('contact-name').value;
+							
+							if(name.length==0){
+								nameError.innerHTML ='Name is required'
+								return false;
+							}
+							if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*&/)){
+								nameError.innerHTML ='Write full name';
+								return false;
+							}
+							nameError.innerHTML = '<i  class="fas fa-check-circle"></i>';
+							return true;
+						}
+						function validateEmail(){
+							var email = document.getElementById('contatc-email').value;
+							if(email.length==0){
+								emailError.innerHTML = "Email is required!";
+								return false;
+							}
+							if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[a-z]{2,4}$/)){
+								emailError.innerHTML = 'Email Invlid';
+								return false;
+							}
+							emailError.innerHTML = '<i class="fas fa-check-circle"></i>';
+							return true;
+							
+						
+						}
+						function validateForm(){
+							if(!validateForm() || !validatePhone() || !validateEmail()){
+								submitError.style.display = 'block';
+								submitError.innerHTML = 'Please fix error to submit';
+								setTimeout(function(){submitError.style.display = 'none'},3000);
+								return false;
+							}
+								
+						}
+  </script>
+</body>
+</html>

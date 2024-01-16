@@ -1,0 +1,415 @@
+
+*{
+		/*used to create space around elements ,outside of any defined borders*/
+	  margin: 0;
+	  
+	  /* used to create space around an element content,inside of any defined borders.*/
+	  padding: 0;
+	  
+	  font-family: 'Open Sans',sans-serif;
+	  /*To keep width ,no matter what the amount of padding*/
+	  box-sizing:border-box;
+	  
+}
+body{
+	background:rgb(235,235,235);
+	color:white;
+	font-family:serif,Helvetica Neue,Helvetica,arial,sans-serif;
+	
+	/*defines how the broswer distributes space between and around content items along the axis of a flex container ,and the inline axis of a grod content .*/
+	justify-content:center;
+}
+	
+	a,h1, h2, p, li{
+		color:grey;
+		font-size:15px; 
+		padding-right: 50px;
+	}
+
+.border-bottom a::before{
+	content:"";
+	position:absolute;
+	width:0;
+	height:15px;
+	background:white;
+	bottom:0;
+	left:0;
+	border-radius:15px;
+	z-index:-1;
+	transition:.2s linear;
+}
+.border-bottom a:hover::before{
+	
+	width:100%;
+}
+
+	p{
+
+		color: white;
+		/*top right buttom left directions*/
+		padding:10px;
+	}
+	.secondary{
+		/*Every HTML has a defauklt display value depending on what type of element
+		it is. The default display value for most elements is block or inline*/
+		background:none;
+		color:#777;
+
+	}
+	ul li{
+		background:black;
+		color:white;
+		
+		/*allows to set a width and height on the element*/
+		display:inline-block;
+		
+		/*specifies the type of list-item marker in a list(square,circle,none)*/
+		list-style-type: none;
+		padding: 5px 15px;
+
+	}
+	#instructionsChat{
+		padding-top:5%;
+		letter-spacing:2px;
+	}
+	#headerName{
+		font-family:'Poppins',sans-serif;
+	}
+
+
+	.header{ 
+	  height: 100px;
+	  background:rgb(82, 120, 255); 
+	  /*#34495e;*/
+	  padding: 0 15px;
+	  color: #fff;
+	}
+	.logo{
+		/*The line height css property sets the height of a line box
+		Its commonly uset to set the distance between lines of text*/
+	  line-height: 100px;
+	  
+	  /*The float property specifies whether an element should float to the left ,right or not at all
+	  absolute poition ignore the float property!*/
+	  /*elemnets next to floating element will flow around it(clear,clearfix hack) */
+	  float: left;
+	  
+	  /*spaecifies how to capitalize an element's text*/
+	  text-transform: uppercase;
+	  
+	  font-family:Monospace;
+	  font-size:20px;
+	}
+
+	.menu{
+	  float: right;
+	  line-height: 100px;
+	}
+	.menu a{
+	  color: #fff;
+	  text-transform: uppercase;
+	  
+	  /*The text decoration property specifiest the decoration aded to text(overline,line-through,underline,underline overline)*/
+	  text-decoration: none;
+	  
+	  padding: 0 10px;
+	  
+	  /*The duration of the transition property*/
+	  transition: 0.4s;
+	}
+	.show-menu-btn,.hide-menu-btn{
+	  transition: 0.4s;
+	  font-size: 30px;
+	  
+	  cursor: pointer;
+	  display: none;
+	}
+	.show-menu-btn{
+	  float: right;
+	}
+	.show-menu-btn i{
+	  line-height: 100px;
+	}
+	/*The hover selector is used to select elements when you mouse over them*/
+	.menu a:hover,
+	.show-menu-btn:hover,
+	.hide-menu-btn:hover{
+	  color: #3498db;
+	}
+	/*z-index only works on positioned elements and direct children of display:flex elements.
+	*z-index propety specifiest the stack order of an element 
+	*without any z index value, elements stack in the order that they apear in the DOM 
+	*Element with no static positioning will always apear on the top of elements eith default satatic positioning
+	*/
+	#chk{
+	  position: absolute;
+	  visibility: hidden;
+	  z-index: -1111;
+	}
+
+	.content{
+	  padding: 0 20px;
+	}
+	
+	.content p{
+	  text-align: justify;
+	}
+	
+	/*The @media rule introduced in css2,made it possible to define different style rulws for differrent media types
+	medai queries in css3, extended the css2 nedia types idea
+	instead a type of device ,they look at the capabilty of the device
+	*/
+	@media screen and (max-width:800px) {
+	  .show-menu-btn,.hide-menu-btn{
+		display: block;
+	 }
+	  .menu{
+		position: fixed;
+		width: 100%;
+		/*height:100vh=100% of the viewport height(100% of avaible height)*/
+		height: 100vh;
+		
+		right: -100%;
+		top: 0;
+		text-align: center;
+		padding: 80px 0;
+		line-height: normal;
+		transition: 0.7s;
+	  }
+	  .menu a{
+		display:block;
+		padding: 20px;
+		border-bottom: 5px solid #fff;
+	  }
+	  .hide-menu-btn{
+		position: absolute;
+		top: 40px;
+		right: 40px;
+	  }
+	  #chk:checked ~ .menu{
+		right: 0;
+	  }
+	}
+#text{
+	color:white;
+	font-size:40px;
+	margin-top:300px;
+	text-transform:uppercase;
+	font-family:"Montserrat";
+	font-weight:700;			
+}
+#myLabel{
+	color:grey;
+}
+#instructionTest{
+	color:grey;
+}
+#headerName{
+	color:white;
+}
+.accordion{
+  max-width: 600px;
+  padding: 20px;
+  padding-top:200px;
+}
+
+.accordion-item{
+  border-bottom: 1px solid #3498db;
+  padding: 20px 0;
+}
+
+.item-header{
+  padding: 14px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.title{
+  font-size: 20px;
+  font-weight: 600;
+  color:#3498db;
+}
+
+.icon{
+  width: 28px;
+  height: 28px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 25px;
+  color:#3498db;
+}
+
+.text{
+  color: #888;
+  padding: 0 6px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion-item.active .text{
+  max-height: 600px;
+  
+  /*transition allows you to change prperty values smoothly ,ober a given duration*/
+  transition: .4s linear;
+}
+
+
+
+		
+
+		.gotopbtn{
+			position: fixed;
+			width: 50px;
+			height: 50px;
+			background-color: #37a3fe;
+			top: -80px;
+			right: 50px;
+			text-align: center;
+			line-height: 50px;
+			color: #fff;
+			font-size: 24px;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: .6s ease-out;
+			opacity: 0;
+		}
+		/*calc is an inbuilt fucntion which allows us to perform calculations*/
+		.gotopbtn.active{
+			
+			top: calc(100% - 100px);
+			opacity: 1;/*default*/
+		}
+
+		.gotopbtn:hover{
+			background-color: #27aa60;
+		}
+
+		.gotopbtn::before,
+		.gotopbtn::after{
+			content: "";
+			width: 50px;
+			height: 50px;
+			/*The border radius property defines the radius the radius of  the elements corners*/
+			border-radius: 50%;
+			border: 1px solid #37a3fe;
+			position: absolute;
+			left: 0;
+			box-sizing: border-box;
+			animation: waves 2s linear infinite;
+		}
+		.gotopbtn::after{
+			/*webkit refers to the browser rendering engine used for Apple's Safari and Google's Chrome browsers*/
+			/*the animation-delay property specifies a delay for the start of an animation*/
+			animation-delay: 1s;
+		}
+		
+		/*The before selector inserts something before the content of each selected elements*/
+		/*the :: after selector to insert something after the content*/
+		.gotopbtn:hover::before,
+		.gotopbtn:hover::after{
+			border-color: #27aa60;
+		}
+		
+		/*the keyframes rule specifies the animation code
+		The animation is creted by gradually changing from one set of css styles to another
+		@keyframes animationname {keyframes-selector {css-styles;}}
+		
+		*/
+		@keyframes waves{
+			to{
+				/*The transfrom property lets you rotate ,scale,skew,translate element*/
+				/*The scale property in css resizes an element's width and height in proportion*/
+				transform: scale(2);
+				/*The opacity property sets the opacity level for an element (1 = default,0.5 = 50%)*/
+				opacity: 0;
+			}
+		}
+		.text-box{
+			color:#fff;
+			position:absolute;
+			
+		}
+		.text-box #IM{
+			font-size: 50x;
+			font-weight:600;
+		}
+		.text-box #NOAA{
+			font-size: 190px;
+			line-height:160px;
+			margin-left: -10px;
+		}
+		.text-box h3{
+			font-size: 40px;
+			
+			/*The font-weight property sets how thick or thin characters in the text should be displayed*/
+			font-weight:500;
+		}
+		/*canvas styling START*/
+		#canvasAnimation{
+		padding: 0;
+		margin: 0;
+		height: 100vh;
+		display: flex;
+		justify-content: right;
+		align-items: right;
+		
+		}
+		
+		#canvas {
+			display: block;
+		}
+		/*canvas styling END */
+		input{
+			
+		}
+	.butttonChecking{
+		background-color: white; 
+		color: black; 
+		border: 2px solid #008CBA;
+	
+	}
+	.buttonChecking {
+	  background-color: none; 
+	  border: none;
+	  color:rgb(82, 120, 255) ;
+	  padding: 10px 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 4px 2px;
+	  transition-duration: 0.4s;
+	  cursor: pointer;
+	  
+	}
+	.inputClass{
+		padding:5px 30px;
+	}
+
+	input{
+		font-size:22px;
+		border-radius: 8px;
+		font-family:serif;
+	}
+
+
+	.buttonChecking:hover {
+	  background-color: #008CBA;
+	  color: white;
+	  cursor:pointer;
+	}
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		

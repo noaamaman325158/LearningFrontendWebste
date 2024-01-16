@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Webpage</title>
+	 <link rel="stylesheet" href="myChat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="index1Style.css">
+	<link rel="stylesheet" type="text/css" href="loaderStyle.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="loaderFunction.js"></script>
+	<script type="text/javascript" src="goTopFunc.js"></script>
+	
+	<style>
+		.skillsLink{
+			padding-bottom:700px;
+		}
+		#skillLink{
+			
+			position:relative;
+			background:#0690fd;
+			color:#fff;
+			width:300px;
+			height:50px;
+			display:flex;
+			justify-content: center;
+			align-items: right;
+			transition:0.5s;
+			box-shadow: 0 20px 25px #0690fd44;
+			overflow:hidden;
+			text-decoration:none;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			font-size:1.1em;
+		}
+		#skillLink:hover{
+			width:600px;
+			transition-delay:0.5s;
+
+		}
+		#skillLink::before{
+			content:'';
+			position:absolute;
+			right:25px;
+			width:12px;
+			border-top:3px solid #fff;
+			border-right:3px solid #fff ;
+			transform:rotate(45deg);
+			transition:0.5s;
+		}
+		#skillLink:hover::before{
+			transform: rotate(45deg) translate(50px,-50px);
+		}
+		#skillLink::after{
+			content:'';
+			position:absolute;
+			left:-50px;
+			width:12px;
+			border-top:3px solid #fff;
+			border-right:3px solid #fff ;
+			transform:rotate(45deg);
+			transform: rotate(45deg) translate(-50px,50px);
+			transition:0.5s;
+		}
+		#skillLink:hover::after{
+			transform: rotate(45deg) translate(50px,-50px);
+			transition-delay:1s;
+		}
+		#skillLink span{
+			visibility: hidden;
+			opacity:0;
+			white-space: nowrap;
+			transition:0.5s;
+			transform:translateX(-30px);
+		}
+		#skillLink:hover span{
+			visibility: visible;
+			opacity:1;
+			transition-delay:0.75s;
+			transform:translateX(10px);
+		}
+	</style>
+	<style>
+		
+	</style>
+	
+
+</head>
+
+
+
+
+<body>
+<!--start chat bar-->
+<!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Chat with us!
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="myResponses.js"></script>
+<script src="myChat.js"></script>
+
+<!--The end chat-->
+
+
+
+<!--The loader-->
+<div class="loader-container">
+        <div class="loader"></div>
+</div>
+<!--end loader-->
+<!--go top bottom START-->
+<div class="container">
+	<div class="gotopbtn">
+	<i class="fas fa-arrow-up"></i>
+</div>
+<!--go top bottom END-->
+
+<div class="header">
+    <h2 class="logo" id ="headerName">N o a a  M a m a n</h2>
+    <input type="checkbox" id="chk"> 
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="rTry.html"><label class="borderBottom">register</label></a>
+      <a href="page4.html"><label class="borderBottom">material</label></a>
+      <a href="test.html"><label class="borderBottom">test</label></a>
+      <a href="page3.html"><label class="border-bottom">The goal</label></a>
+	  <a href="sm.html"><label class="borderBottom">for social medias</label></a>
+	  <a href="myCard.html"><label class="borderBottom">my card</label></a>
+	  <a href="getInTouch.html"><label class="borderBottom">Get in touch</label></a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
+	
+	
+	
+	
+	<div class="accordion">
+      <div class="accordion-item">
+        <div class="item-header">
+          <h1 class="title">Websites</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+         This is my first website!<br>So I hope you will enjoy the learning expriement that the content of the website will give to you!
+        </p>
+      </div>
+
+      <div class="accordion-item">
+        <div class="item-header">
+          <h1 class="title">Design</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+          The design of this website base in is majorityon CSS.<br> In addition for different aspects I used the jquery library<br>and of course using special websites for icons and features
+        </p>
+      </div>
+
+      <div class="accordion-item">
+        <div class="item-header">
+          <h1 class="title">Functionality</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+			A lot of effort and time devote for the level and the quality of the website by me.<br>Its expressed by the responsiveness of the web,the canvas,the buttons and more faastinating features.
+          </p>
+      </div>
+
+      <div class="accordion-item">
+        <div class="item-header">
+          <h1 class="title">Me</h1>
+          <div class="icon">+</div>
+        </div>
+        <p class="text">
+          Hello everyone!, my name is noaa maman and i'm a softare student in the hermelin college . This is my work about webpage for testing students . I hop You will enjoy the expriement the website will give you !
+        </p>
+      </div>
+    </div>
+</div>
+
+
+	<div id="canvasAnimation">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div class="skillsLink">
+			<a href="resultsAnimation.html" id="skillLink">For watching my skills ,Click me!</a>
+			<a href="tableWebpage.html" id="skillLink">For more advanced courses!</a>
+	</div>
+	
+</div>
+<div class="containerType">
+	<span class="text first-text">I'm a</span>
+	<span class="text sec-text"></span>
+</div>
+<script>
+	const text = document.querySelector(".sec-text");
+	
+	const textLoad = () => {
+		setTimeout(() =>{
+			text.textContent = "Developer";
+		},0);
+		setTimeout(() =>{
+			text.textContent = "Designer";
+		},4000);
+		setTimeout(() =>{
+			text.textContent = "Student";
+		},8000);
+	}
+	
+	textLoad();
+</script>
+<script>
+	function sayMyName()
+	{
+			var str = document.getElementById("myText").value;
+			alert("hello "+str+", welcome to my website!");
+	}
+	
+</script>
+<!--START canvas script-->
+<script type="text/javascript" src="canvasRand.js"></script>
+<!--END canvas script-->
+ <!--START accordion script-->
+<script type="text/javascript" src="accordionFunc.js"></script>
+<!--END accordion script-->
+
+<script>
+		$(window).scroll(function(){
+		if($(this).scrollTop() > 150)
+			$(".gotopbtn").addClass("active");
+		else
+		$(".gotopbtn").removeClass("active"); 
+		});
+		$(".gotopbtn").click(function(){
+			$("html, body").animate({scrollTop:0}, 800);
+		});
+</script>
+	
+	
+</body>
+</html>

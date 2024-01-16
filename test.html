@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="testStyle.css">
+	<link rel="stylesheet" type="text/css" href="loaderStyle.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>Document</title>
+	<script type="text/javascript" src="loaderFunction.js"></script>
+	<!--This is the buttom functionality START-->
+	 <script type="text/javascript" src="goTopFunc.js"></script>
+	<!--This is the buttom functionality END-->
+	
+	<style>
+		.generalQuestion{
+			font-family:serif;
+			line-height:30px;
+		}
+		
+		
+	</style>
+	<style>
+		body {margin:0}
+
+.icon-bar {
+
+position:inline-block;
+position:inline-block;
+  width: 90px;
+  background-color: rgb(235,235,235);
+}
+
+.icon-bar active {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+  
+}
+
+.icon-bar active:hover {
+  background-color: #000;
+  padding-bottom:100px;
+}
+
+.active {
+  background-color: rgb(82, 120, 255);
+}
+	</style>
+	<style>
+		.textSection span{
+		position:absolute;
+		height:37px;
+		min-width:150px;
+		top:-44px;
+		left:-50%;
+		transform: translate(-40%,-20px);
+		color:#fff;
+		border-radius:25px;
+		background:#6d50e2;
+		line-height:37px;
+		text-align:center;
+		transition:all 0.3s ease;
+		opacity:0;
+		pointer-events:none;
+			
+		}
+		.textSection strong:hover{
+			opacity:1;
+			pointer-events:auto;
+			transform: translate(-50%,0);
+		}
+		.textSection strong:before{
+			content:'';
+			position:absolute;
+			height:15px;
+			width:15px;
+			background:red;
+			bottom:-6px;
+			transform:translate(-50%) rotate(45deg);
+			z-index:-1;
+			
+		}
+	</style>
+	<script>
+    var points = 0;
+    function fn2()
+    {
+        var str = document.getElementById("ans1").value;
+        
+        if(str=='arrow'||str=='Arrow')
+        {
+            alert("well done");
+            points+=15;
+
+        }
+            
+        else
+            alert("not good!");
+    }
+    function fn3()
+    {
+        var str = document.getElementById("ans2").value;
+        if(str=='callbacks'||str=='Callbacks')
+        {
+            points+=15;
+            alert("well done!");
+            
+        }
+        else
+            alert("not good");
+
+    }
+    function fn4()//came through the id of the uniqe button
+    {
+        var str = document.getElementById("ans3").value;//input
+        if(str=='Yes'||str=='yes'||str[0]=='y'||str[0]=='Y')
+        {
+            points+=20;
+            alert('no my dear friend,noaa has a big mistake');
+            
+        }
+            
+        else
+            alert('you are right!,there is one case that noaa forget to think about him');
+    }
+    function fn5()
+    {
+        var str = document.getElementById("ans4").value;
+        if(str=='2')
+        {
+            points+=20;
+            alert('amazing');
+            
+        }
+        else
+            alert("try again");
+    }
+    function fn6()
+    {
+        var str = document.getElementById("ans5").value;
+        if(str=='2')
+        {
+            points+=30;
+            alert('You are a full stack web develop!');
+            
+        }
+        else
+            alert('maybe you need refreshing your knowledge on the material.....');
+    
+    }
+    function fnAll()
+    {
+        alert("The total is:"+points);
+        points=0;
+    }
+</script>
+<style>
+		.container .text{
+		position:relative;
+		color:#4070F4;
+		font-size: 30px;
+		font-weight:600;
+	}
+	.container .text.first-text{
+		color:#fff;
+
+	}
+	.text.sec-text:before{
+		content:'';
+		position:absolute;
+		top:0;
+		left:0;
+		height:100%;
+		width:100%;
+		background-color: rgb(235,235,235);
+		border-left:2px solid #4070F4;
+		animation:animate 4s steps(12) infinite;
+	}
+	@keyframes animate{
+		40%, 60%{
+			left:100%;
+		}
+		100%{
+			left:0%;
+		}
+	}
+	.containerType{
+		margin-left:145px;
+		margin-top:60px;
+	}
+	</style>
+</head>
+
+	
+<body>
+
+	<div class="icon-bar">
+			<a class="active" href="index1.html"><i class="fa fa-home"></i></a> 
+			<a class="active" href="getInTouch.html"><i class="fa fa-envelope"></i></a> 
+	</div>
+	<!--start loader-->
+		<div class="loader-container">
+			<div class="loader"></div>
+		</div>
+	<!--finish loader-->
+	<!--the buttom section START-->
+	<div class="container">
+		<div class="gotopbtn">
+		<i class="fas fa-arrow-up"></i>
+	</div>
+	<!--the buttom section END-->
+		<div class="containerType">
+			<span class="text first-text">Bounus Questions About</span>
+			<span class="text sec-text"></span>
+		</div>
+		<script>
+			const text = document.querySelector(".sec-text");
+			
+			const textLoad = () => {
+				setTimeout(() =>{
+					text.textContent = "Design";
+				},0);
+				setTimeout(() =>{
+					text.textContent = "JavaScript";
+				},4000);
+				setTimeout(() =>{
+					text.textContent = "followCodes";
+				},8000);
+			}
+			
+			textLoad();
+	</script>
+	<div class="page-content">
+			<div id="q1" class="generalQuestion">
+				<div class="textSection">
+					<p>give an example for one type(from two) functions that we learned in the tutorial:(write precisely!)</p>
+				</div>
+				<div class="inputSection">
+					<input type="text" id="ans1" placeholder="only low- case letters!" class="inputClass" placeholder="only lower case letters">
+					<button onclick="fn2()" id="btn2" class="buttonChecking">Click for checking<button>
+				</div>
+			</div>
+			<div id="q2" class="generalQuestion">
+				<div class="textSection">
+					<p>The <strong>addEventListener()</strong><span>kbjnjnjkn</span> is an inbuilt function in java script which takes event to listen<br>for, and a<em>second argument to be called whenever the described event gets fired.</em></p>
+					<p>what is the phenomen that this function using?</p>
+				</div>
+				<div class="inputSection">
+					<input type="text" id="ans2" placeholder="only low- case letters!" class="inputClass">
+					<button onclick="fn3()" id="btn3" class="buttonChecking">Click for checking<button>
+				</div>
+			</div>
+			<div class="textSection" >
+				<p id="secondPart">You ready for following codes??,take pencil and paper and be ready for the worst :)</p>
+			</div>
+			<div id="q3" class="generalQuestion">
+				<div class="textSection">
+					<p>noaa:"This is awesome code, take care all the different ranges that the variable can have in the code!",noaa is right?</p>
+				</div>
+				<div class="imgSection">
+					<img src="ex13.png">
+				</div>
+				<div class="inputSection">
+					<input type="text" id="ans3" placeholder="only low- case letters!(Yes/No)" class="inputClass">
+					<button onclick="fn4()" id="btn4" class="buttonChecking" >Click for checking<button>
+				</div>
+			</div>
+			
+			<div id="q4" class="generalQuestion">
+				<div class="textSection">
+					<p>How many times the word true will apear in the console?</p>
+				</div>
+				<div class="imgSection">
+					<img src="ex14.png">
+				</div>
+				<div class="inputSection">
+					<input type="text" id="ans4" placeholder="only low- case letters!(Yes/No)" class="inputClass">
+					<button onclick="fn5()" id="btn5" class="buttonChecking">Click for checking<button>
+				</div>
+			</div>
+			
+			<div id="q5" class="generalQuestion">
+				<div class="textSection">
+					<p>What is the output in the console?</p>
+				</div>
+				<div class="imgSection">
+					<img src="ex15.png">
+				</div>
+				<div class="inputSection">
+					<input type="text" id="ans5" placeholder="only low- case letters!(Yes/No)" class="inputClass">
+					<button onclick="fn6()" id="btn6" class="buttonChecking">Click for checking<button>
+				</div>
+				<div>
+					<button onclick="fnAll()" id="btnAll" class="buttonChecking">Click for checking All<button>
+				</div>
+			</div>
+			<div id="testSection">
+				<div id=connectTest>
+				<a href="quiz.html"><span>Get Started</span></a>
+			</div>
+			
+		<script>
+			$(window).scroll(function(){
+			if($(this).scrollTop() > 150)
+				$(".gotopbtn").addClass("active");
+			else
+			$(".gotopbtn").removeClass("active"); 
+			});
+			$(".gotopbtn").click(function(){
+				$("html, body").animate({scrollTop:0}, 800);
+			});
+		</script>
+	
+	
+		
+
+		
+
+		
+	
+	</div>
+	
+	<div class="cursor"></div>
+	<div class="cursor2"></div>
+	
+    
+</body>
+</html>
